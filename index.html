@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Salman & Shaziya Nikkah</title>
+
+<style>
+body{
+margin:0;
+font-family: "Georgia", serif;
+text-align:center;
+color:#f7d88a;
+background: linear-gradient(135deg,#062f2b,#0f5132);
+height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+}
+
+.container{
+background:rgba(0,0,0,0.4);
+padding:40px;
+border-radius:20px;
+box-shadow:0 0 20px rgba(0,0,0,0.5);
+}
+
+.moon{
+font-size:70px;
+margin-bottom:10px;
+}
+
+h1{
+font-size:48px;
+margin:10px 0;
+}
+
+h2{
+font-weight:normal;
+color:white;
+}
+
+.date{
+font-size:24px;
+margin-top:10px;
+}
+
+#timer{
+font-size:50px;
+margin-top:30px;
+color:#ffd700;
+}
+
+.footer{
+margin-top:30px;
+font-size:18px;
+color:white;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="moon">☪</div>
+
+<h1>Salman & Shaziya</h1>
+
+<h2>Nikkah Ceremony</h2>
+
+<div class="date">29 March 2026</div>
+
+<div id="timer"></div>
+
+<div class="footer">
+InshaAllah our beautiful journey begins 💍
+</div>
+
+</div>
+
+<script>
+
+var countDownDate = new Date("Mar 29, 2026 10:00:00").getTime();
+
+var x = setInterval(function(){
+
+var now = new Date().getTime();
+var distance = countDownDate - now;
+
+var days = Math.floor(distance/(1000*60*60*24));
+var hours = Math.floor((distance%(1000*60*60*24))/(1000*60*60));
+var minutes = Math.floor((distance%(1000*60*60))/(1000*60));
+var seconds = Math.floor((distance%(1000*60))/1000);
+
+document.getElementById("timer").innerHTML =
+days + " Days " +
+hours + " Hours " +
+minutes + " Minutes " +
+seconds + " Seconds ";
+
+if(distance < 0){
+clearInterval(x);
+document.getElementById("timer").innerHTML = "Alhamdulillah 💍 Married!";
+}
+
+},1000);
+
+</script>
+
+</body>
+</html>
